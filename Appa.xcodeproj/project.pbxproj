@@ -13,6 +13,7 @@
 		C66D86DA25CA55CD0037DAE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D925CA55CD0037DAE1 /* Preview Assets.xcassets */; };
 		C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DB25CA55CD0037DAE1 /* Persistence.swift */; };
 		C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */; };
+		C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86EA25CA58C90037DAE1 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C66D86DB25CA55CD0037DAE1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C66D86DE25CA55CD0037DAE1 /* Appa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appa.xcdatamodel; sourceTree = "<group>"; };
 		C66D86E025CA55CD0037DAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66D86EA25CA58C90037DAE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 		C66D86D125CA55CC0037DAE1 /* Appa */ = {
 			isa = PBXGroup;
 			children = (
+				C66D86E825CA56AD0037DAE1 /* Views */,
 				C66D86D225CA55CC0037DAE1 /* AppaApp.swift */,
-				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
 				C66D86D625CA55CD0037DAE1 /* Assets.xcassets */,
 				C66D86DB25CA55CD0037DAE1 /* Persistence.swift */,
 				C66D86E025CA55CD0037DAE1 /* Info.plist */,
@@ -73,6 +75,15 @@
 				C66D86D925CA55CD0037DAE1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C66D86E825CA56AD0037DAE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
+				C66D86EA25CA58C90037DAE1 /* MapView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			files = (
 				C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */,
 				C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */,
+				C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */,
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
 			);
