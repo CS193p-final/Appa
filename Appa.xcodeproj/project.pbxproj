@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */; };
 		C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D225CA55CC0037DAE1 /* AppaApp.swift */; };
 		C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D425CA55CC0037DAE1 /* ContentView.swift */; };
 		C66D86D725CA55CD0037DAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D625CA55CD0037DAE1 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C66D86CF25CA55CC0037DAE1 /* Appa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66D86D225CA55CC0037DAE1 /* AppaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppaApp.swift; sourceTree = "<group>"; };
 		C66D86D425CA55CC0037DAE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				C66D86D225CA55CC0037DAE1 /* AppaApp.swift */,
 				C66D86D625CA55CD0037DAE1 /* Assets.xcassets */,
 				C66D86DB25CA55CD0037DAE1 /* Persistence.swift */,
+				C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */,
 				C66D86E025CA55CD0037DAE1 /* Info.plist */,
 				C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */,
 				C66D86D825CA55CD0037DAE1 /* Preview Content */,
@@ -157,6 +160,7 @@
 			files = (
 				C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */,
 				C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */,
+				C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */,
 				C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */,
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
@@ -289,7 +293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Appa/Preview Content\"";
-				DEVELOPMENT_TEAM = F8WWCGPHV3;
+				DEVELOPMENT_TEAM = DFDCS22GK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Appa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -311,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Appa/Preview Content\"";
-				DEVELOPMENT_TEAM = F8WWCGPHV3;
+				DEVELOPMENT_TEAM = DFDCS22GK9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Appa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
