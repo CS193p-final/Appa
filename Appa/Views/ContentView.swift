@@ -7,11 +7,13 @@
 
 import SwiftUI
 import CoreData
+import UIKit
+import MapKit
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
     @ObservedObject var locationManager = LocationManager()
+    @State var selection: MKAnnotation?
     
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
@@ -22,7 +24,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        //MapView()
+        MapView(selection: $selection)
         VStack {
             Text("location status: \(locationManager.statusString)")
             HStack {
