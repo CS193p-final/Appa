@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 
 struct MapView: UIViewRepresentable {
+    let currentCoordinate: CLLocationCoordinate2D?
     @Binding var selection: MKAnnotation?
-    //let annotations: [MKAnnotation]
+//    let annotations: [MKAnnotation]
     
     func makeUIView(context: Context) -> MKMapView {
         let mkMapView = MKMapView()
@@ -21,8 +22,10 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        uiView.setRegion(MKCoordinateRegion(center: uiView.userLocation.coordinate, span: town), animated: true)
+        if let coordinate = currentCoordinate {
+            let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            uiView.setRegion(MKCoordinateRegion(center: coordinate, span: town), animated: true)
+        }
     }
     
     func makeCoordinator() -> Coordinator {

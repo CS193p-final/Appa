@@ -23,8 +23,12 @@ struct ContentView: View {
         return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
     }
 
+    var currentLocation: CLLocationCoordinate2D? {
+        locationManager.lastLocation?.coordinate
+    }
+    
     var body: some View {
-        MapView(selection: $selection)
+        MapView(currentCoordinate: currentLocation, selection: $selection)
         VStack {
             Text("location status: \(locationManager.statusString)")
             HStack {
