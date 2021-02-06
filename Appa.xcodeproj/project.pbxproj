@@ -10,6 +10,7 @@
 		C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */; };
 		C1E8EDFF25CC814E00EEAB9F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E8EDFE25CC814E00EEAB9F /* Place.swift */; };
 		C604CABF25CCF0D800DF385B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CABE25CCF0D800DF385B /* CloudKit.framework */; };
+		C604CAE325CE172000DF385B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CAE225CE172000DF385B /* MapKit.framework */; };
 		C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D225CA55CC0037DAE1 /* AppaApp.swift */; };
 		C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D425CA55CC0037DAE1 /* ContentView.swift */; };
 		C66D86D725CA55CD0037DAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D625CA55CD0037DAE1 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		C1E8EDFE25CC814E00EEAB9F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C604CABC25CCF0D400DF385B /* Appa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appa.entitlements; sourceTree = "<group>"; };
 		C604CABE25CCF0D800DF385B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C604CAE225CE172000DF385B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C66D86CF25CA55CC0037DAE1 /* Appa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66D86D225CA55CC0037DAE1 /* AppaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppaApp.swift; sourceTree = "<group>"; };
 		C66D86D425CA55CC0037DAE1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C604CAE325CE172000DF385B /* MapKit.framework in Frameworks */,
 				C604CABF25CCF0D800DF385B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +53,7 @@
 		C604CABD25CCF0D800DF385B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C604CAE225CE172000DF385B /* MapKit.framework */,
 				C604CABE25CCF0D800DF385B /* CloudKit.framework */,
 			);
 			name = Frameworks;
