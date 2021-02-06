@@ -27,13 +27,15 @@ struct ContentView: View {
         locationManager.lastLocation?.coordinate
     }
     
+    @State private var searchQuery: String = ""
+    
     var body: some View {
-        MapView(currentCoordinate: currentLocation, selection: $selection)
-        VStack {
-            Text("location status: \(locationManager.statusString)")
-            HStack {
-                Text("latitude: \(userLatitude)")
-                Text("longtidude: \(userLongitude)")
+        ZStack {
+            MapView(currentCoordinate: currentLocation, selection: $selection)
+            VStack{
+                SearchBar(text: $searchQuery)
+                    .frame(maxHeight: 100, alignment: .topLeading)
+                Spacer()
             }
         }
     }
