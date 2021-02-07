@@ -7,34 +7,22 @@
 
 import SwiftUI
 
-struct SearchBar: View {
-    @Binding var text: String
+struct SearchBarBoo: View {
+    @State var text: String = ""
     
-    @State private var isEditing = false
+    //@State private var isEditing = false
     
     var body: some View {
         ZStack {
-            TextField("Search...", text: $text)
+            TextField("Search...", text: $text, onEditingChanged: { began in
+                if !began {
+                }
+            })
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
                 .padding(.horizontal, 10)
-                .onTapGesture {
-                    isEditing = true
-                }
-            HStack {
-                Spacer()
-                if isEditing {
-                    Button {
-                        isEditing = false
-                        text = ""
-                    } label: {
-                        Image(systemName: "xmark.circle")
-                    }
-                    .frame(alignment: .bottomTrailing)
-                }
-            }
         }
     }
 }

@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */; };
-		C117851725D07A75005DFCD2 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851125D07A75005DFCD2 /* CircleImage.swift */; };
-		C117851825D07A75005DFCD2 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117850F25D07A75005DFCD2 /* MemoryView.swift */; };
-		C117851925D07A75005DFCD2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851025D07A75005DFCD2 /* MenuView.swift */; };
-		C117851A25D07A75005DFCD2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851525D07A75005DFCD2 /* Person.swift */; };
-		C117851B25D07A75005DFCD2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851625D07A75005DFCD2 /* Place.swift */; };
-		C117851C25D07A75005DFCD2 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851325D07A75005DFCD2 /* AchievementView.swift */; };
-		C117851D25D07A75005DFCD2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851425D07A75005DFCD2 /* SettingsView.swift */; };
-		C117851E25D07A75005DFCD2 /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851225D07A75005DFCD2 /* EditableText.swift */; };
-		C117851F25D07A75005DFCD2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117850E25D07A75005DFCD2 /* ProfileView.swift */; };
+		C110FD0B25D083C500A64E11 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110FD0A25D083C500A64E11 /* CircleImage.swift */; };
+		C1647F9725D0850D00C96941 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9625D0850D00C96941 /* MapView.swift */; };
+		C1647F9A25D0851500C96941 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9925D0851500C96941 /* AchievementView.swift */; };
+		C1647FA225D0859300C96941 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9C25D0859300C96941 /* MemoryView.swift */; };
+		C1647FA325D0859300C96941 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9D25D0859300C96941 /* Place.swift */; };
+		C1647FA425D0859300C96941 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9E25D0859300C96941 /* ProfileView.swift */; };
+		C1647FA525D0859300C96941 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9F25D0859300C96941 /* SettingsView.swift */; };
+		C1647FA625D0859300C96941 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647FA025D0859300C96941 /* Person.swift */; };
+		C1647FA725D0859300C96941 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647FA125D0859300C96941 /* MenuView.swift */; };
 		C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */; };
 		C604CABF25CCF0D800DF385B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CABE25CCF0D800DF385B /* CloudKit.framework */; };
 		C604CAE325CE172000DF385B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CAE225CE172000DF385B /* MapKit.framework */; };
@@ -27,20 +27,19 @@
 		C66D86DA25CA55CD0037DAE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D925CA55CD0037DAE1 /* Preview Assets.xcassets */; };
 		C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DB25CA55CD0037DAE1 /* Persistence.swift */; };
 		C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */; };
-		C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86EA25CA58C90037DAE1 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		C117850E25D07A75005DFCD2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/ProfileView.swift; sourceTree = "<absolute>"; };
-		C117850F25D07A75005DFCD2 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoryView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/MemoryView.swift; sourceTree = "<absolute>"; };
-		C117851025D07A75005DFCD2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/MenuView.swift; sourceTree = "<absolute>"; };
-		C117851125D07A75005DFCD2 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleImage.swift; path = /Users/gn02/Developer/Appa/Appa/Views/CircleImage.swift; sourceTree = "<absolute>"; };
-		C117851225D07A75005DFCD2 /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditableText.swift; path = /Users/gn02/Developer/Appa/Appa/Views/EditableText.swift; sourceTree = "<absolute>"; };
-		C117851325D07A75005DFCD2 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/AchievementView.swift; sourceTree = "<absolute>"; };
-		C117851425D07A75005DFCD2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/SettingsView.swift; sourceTree = "<absolute>"; };
-		C117851525D07A75005DFCD2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Person.swift; path = /Users/gn02/Developer/Appa/Appa/Views/Person.swift; sourceTree = "<absolute>"; };
-		C117851625D07A75005DFCD2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = ../../Appa.xcodeproj/Place.swift; sourceTree = "<group>"; };
+		C110FD0A25D083C500A64E11 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		C1647F9625D0850D00C96941 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C1647F9925D0851500C96941 /* AchievementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		C1647F9C25D0859300C96941 /* MemoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		C1647F9D25D0859300C96941 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		C1647F9E25D0859300C96941 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C1647F9F25D0859300C96941 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C1647FA025D0859300C96941 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C1647FA125D0859300C96941 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C604CABC25CCF0D400DF385B /* Appa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appa.entitlements; sourceTree = "<group>"; };
 		C604CABE25CCF0D800DF385B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -54,7 +53,6 @@
 		C66D86DB25CA55CD0037DAE1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C66D86DE25CA55CD0037DAE1 /* Appa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appa.xcdatamodel; sourceTree = "<group>"; };
 		C66D86E025CA55CD0037DAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C66D86EA25CA58C90037DAE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,17 +122,16 @@
 		C66D86E825CA56AD0037DAE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C117851325D07A75005DFCD2 /* AchievementView.swift */,
-				C117851125D07A75005DFCD2 /* CircleImage.swift */,
-				C117851225D07A75005DFCD2 /* EditableText.swift */,
-				C117850F25D07A75005DFCD2 /* MemoryView.swift */,
-				C117851025D07A75005DFCD2 /* MenuView.swift */,
-				C117851525D07A75005DFCD2 /* Person.swift */,
-				C117851625D07A75005DFCD2 /* Place.swift */,
-				C117850E25D07A75005DFCD2 /* ProfileView.swift */,
-				C117851425D07A75005DFCD2 /* SettingsView.swift */,
+				C1647F9C25D0859300C96941 /* MemoryView.swift */,
+				C1647FA125D0859300C96941 /* MenuView.swift */,
+				C1647FA025D0859300C96941 /* Person.swift */,
+				C1647F9D25D0859300C96941 /* Place.swift */,
+				C1647F9E25D0859300C96941 /* ProfileView.swift */,
+				C1647F9F25D0859300C96941 /* SettingsView.swift */,
+				C1647F9925D0851500C96941 /* AchievementView.swift */,
+				C1647F9625D0850D00C96941 /* MapView.swift */,
 				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
-				C66D86EA25CA58C90037DAE1 /* MapView.swift */,
+				C110FD0A25D083C500A64E11 /* CircleImage.swift */,
 				C604CAE525CE261E00DF385B /* SearchBar.swift */,
 			);
 			path = Views;
@@ -209,23 +206,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C117851D25D07A75005DFCD2 /* SettingsView.swift in Sources */,
+				C1647FA625D0859300C96941 /* Person.swift in Sources */,
 				C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */,
-				C117851B25D07A75005DFCD2 /* Place.swift in Sources */,
+				C1647FA425D0859300C96941 /* ProfileView.swift in Sources */,
 				C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */,
+				C1647F9A25D0851500C96941 /* AchievementView.swift in Sources */,
+				C1647FA325D0859300C96941 /* Place.swift in Sources */,
 				C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */,
 				C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */,
-				C117851C25D07A75005DFCD2 /* AchievementView.swift in Sources */,
-				C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */,
+				C1647FA525D0859300C96941 /* SettingsView.swift in Sources */,
+				C1647FA725D0859300C96941 /* MenuView.swift in Sources */,
+				C1647FA225D0859300C96941 /* MemoryView.swift in Sources */,
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
-				C117851725D07A75005DFCD2 /* CircleImage.swift in Sources */,
-				C117851F25D07A75005DFCD2 /* ProfileView.swift in Sources */,
-				C117851A25D07A75005DFCD2 /* Person.swift in Sources */,
 				C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */,
-				C117851925D07A75005DFCD2 /* MenuView.swift in Sources */,
-				C117851E25D07A75005DFCD2 /* EditableText.swift in Sources */,
-				C117851825D07A75005DFCD2 /* MemoryView.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
+				C1647F9725D0850D00C96941 /* MapView.swift in Sources */,
+				C110FD0B25D083C500A64E11 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

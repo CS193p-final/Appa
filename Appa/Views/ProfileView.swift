@@ -11,6 +11,8 @@ struct ProfileView: View {
     @State var user: Person
     @State private var showImageSourceChooser = false
     @State private var isRenaming = false
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
     
     var body: some View {
         VStack {
@@ -24,22 +26,19 @@ struct ProfileView: View {
                     ImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, user: $user)
                 })
             HStack {
-                EditableText(user.firstName, isEditing: isRenaming) { name in
-                    user.renameFirstname(to: name)
-                }
-                .frame(maxWidth: 200)
-
-                EditableText(user.lastName, isEditing: isRenaming) { name in
-                    user.renameLastname(to: name)
-                }
-                .frame(maxWidth: 100)
-
-                Image(systemName: "pencil")
-                    .onTapGesture {
-                        isRenaming = true
+                TextField("First name", text: $firstName, onEditingChanged: { began in
+                    if !began {
+                        user.renameFirstname(to: firstName)
                     }
+                })
+                
+                TextField("Last name", text: $lastName, onEditingChanged: { began in
+                    if !began {
+                        user.renameLastname(to: lastName)
+                    }
+                })
             }
-            .font(.system(size: profileFont))
+            .font(.system(size: nameFont))
             Spacer()
         }
 
@@ -47,7 +46,7 @@ struct ProfileView: View {
     
     var pfpSize: CGFloat = 150
     var profileFont: CGFloat = 40
-    var nameFont: CGFloat = 15
+    var nameFont: CGFloat = 20
 }
 
 struct ProfileView_Previews:
