@@ -30,13 +30,14 @@ struct ContentView: View {
     @State private var searchQuery: String = ""
     
     var body: some View {
-        ZStack {
-            MapView(currentCoordinate: currentLocation, selection: $selection)
-            VStack{
-                SearchBar(text: $searchQuery)
-                    .frame(maxHeight: 100, alignment: .topLeading)
-                Spacer()
-            }
-        }
+//        ZStack {
+//            MapView(currentCoordinate: currentLocation, selection: $selection)
+//            VStack{
+//                SearchBar(text: $searchQuery)
+//                    .frame(maxHeight: 100, alignment: .topLeading)
+//                Spacer()
+//            }
+//        }
+        MenuView()
     }
 }

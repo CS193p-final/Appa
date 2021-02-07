@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */; };
+		C117851725D07A75005DFCD2 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851125D07A75005DFCD2 /* CircleImage.swift */; };
+		C117851825D07A75005DFCD2 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117850F25D07A75005DFCD2 /* MemoryView.swift */; };
+		C117851925D07A75005DFCD2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851025D07A75005DFCD2 /* MenuView.swift */; };
+		C117851A25D07A75005DFCD2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851525D07A75005DFCD2 /* Person.swift */; };
+		C117851B25D07A75005DFCD2 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851625D07A75005DFCD2 /* Place.swift */; };
+		C117851C25D07A75005DFCD2 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851325D07A75005DFCD2 /* AchievementView.swift */; };
+		C117851D25D07A75005DFCD2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851425D07A75005DFCD2 /* SettingsView.swift */; };
+		C117851E25D07A75005DFCD2 /* EditableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117851225D07A75005DFCD2 /* EditableText.swift */; };
+		C117851F25D07A75005DFCD2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117850E25D07A75005DFCD2 /* ProfileView.swift */; };
 		C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */; };
-		C1E8EDFF25CC814E00EEAB9F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E8EDFE25CC814E00EEAB9F /* Place.swift */; };
 		C604CABF25CCF0D800DF385B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CABE25CCF0D800DF385B /* CloudKit.framework */; };
 		C604CAE325CE172000DF385B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CAE225CE172000DF385B /* MapKit.framework */; };
 		C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604CAE525CE261E00DF385B /* SearchBar.swift */; };
@@ -22,8 +31,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C117850E25D07A75005DFCD2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/ProfileView.swift; sourceTree = "<absolute>"; };
+		C117850F25D07A75005DFCD2 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MemoryView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/MemoryView.swift; sourceTree = "<absolute>"; };
+		C117851025D07A75005DFCD2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/MenuView.swift; sourceTree = "<absolute>"; };
+		C117851125D07A75005DFCD2 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleImage.swift; path = /Users/gn02/Developer/Appa/Appa/Views/CircleImage.swift; sourceTree = "<absolute>"; };
+		C117851225D07A75005DFCD2 /* EditableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditableText.swift; path = /Users/gn02/Developer/Appa/Appa/Views/EditableText.swift; sourceTree = "<absolute>"; };
+		C117851325D07A75005DFCD2 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AchievementView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/AchievementView.swift; sourceTree = "<absolute>"; };
+		C117851425D07A75005DFCD2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = /Users/gn02/Developer/Appa/Appa/Views/SettingsView.swift; sourceTree = "<absolute>"; };
+		C117851525D07A75005DFCD2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Person.swift; path = /Users/gn02/Developer/Appa/Appa/Views/Person.swift; sourceTree = "<absolute>"; };
+		C117851625D07A75005DFCD2 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Place.swift; path = ../../Appa.xcodeproj/Place.swift; sourceTree = "<group>"; };
 		C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		C1E8EDFE25CC814E00EEAB9F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C604CABC25CCF0D400DF385B /* Appa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appa.entitlements; sourceTree = "<group>"; };
 		C604CABE25CCF0D800DF385B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C604CAE225CE172000DF385B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +105,7 @@
 				C66D86D625CA55CD0037DAE1 /* Assets.xcassets */,
 				C66D86DB25CA55CD0037DAE1 /* Persistence.swift */,
 				C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */,
+				C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */,
 				C66D86E025CA55CD0037DAE1 /* Info.plist */,
 				C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */,
 				C66D86D825CA55CD0037DAE1 /* Preview Content */,
@@ -105,8 +124,16 @@
 		C66D86E825CA56AD0037DAE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C117851325D07A75005DFCD2 /* AchievementView.swift */,
+				C117851125D07A75005DFCD2 /* CircleImage.swift */,
+				C117851225D07A75005DFCD2 /* EditableText.swift */,
+				C117850F25D07A75005DFCD2 /* MemoryView.swift */,
+				C117851025D07A75005DFCD2 /* MenuView.swift */,
+				C117851525D07A75005DFCD2 /* Person.swift */,
+				C117851625D07A75005DFCD2 /* Place.swift */,
+				C117850E25D07A75005DFCD2 /* ProfileView.swift */,
+				C117851425D07A75005DFCD2 /* SettingsView.swift */,
 				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
-				C1E8EDFE25CC814E00EEAB9F /* Place.swift */,
 				C66D86EA25CA58C90037DAE1 /* MapView.swift */,
 				C604CAE525CE261E00DF385B /* SearchBar.swift */,
 			);
@@ -182,13 +209,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C117851D25D07A75005DFCD2 /* SettingsView.swift in Sources */,
 				C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */,
+				C117851B25D07A75005DFCD2 /* Place.swift in Sources */,
+				C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */,
 				C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */,
 				C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */,
+				C117851C25D07A75005DFCD2 /* AchievementView.swift in Sources */,
 				C66D86EB25CA58C90037DAE1 /* MapView.swift in Sources */,
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
+				C117851725D07A75005DFCD2 /* CircleImage.swift in Sources */,
+				C117851F25D07A75005DFCD2 /* ProfileView.swift in Sources */,
+				C117851A25D07A75005DFCD2 /* Person.swift in Sources */,
 				C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */,
-				C1E8EDFF25CC814E00EEAB9F /* Place.swift in Sources */,
+				C117851925D07A75005DFCD2 /* MenuView.swift in Sources */,
+				C117851E25D07A75005DFCD2 /* EditableText.swift in Sources */,
+				C117851825D07A75005DFCD2 /* MemoryView.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

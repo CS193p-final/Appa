@@ -2,6 +2,33 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/AchievementView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/CircleImage.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/EditableText.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/MemoryView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/MenuView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/Person.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Place.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/ProfileView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/gn02/Developer/Appa/Appa/Views/SettingsView.swift">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>
