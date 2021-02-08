@@ -32,15 +32,23 @@ struct ContentView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "menubar.rectangle")
-                .imageScale(.large)
-                .onTapGesture {
-                    showMenu = true
-                }
-                .sheet(isPresented: $showMenu, content: {
-                    MenuView()
-                })
+            menuIcon
+            ZStack {
+                MapView(currentCoordinate: currentLocation, selection: $selection)
+                SearchBar()
+            }
         }
+    }
+    
+    private var menuIcon: some View {
+        Image(systemName: "menubar.rectangle")
+            .imageScale(.large)
+            .onTapGesture {
+                showMenu = true
+            }
+            .sheet(isPresented: $showMenu, content: {
+                MenuView()
+            })
     }
 }
 
