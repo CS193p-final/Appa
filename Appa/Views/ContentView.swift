@@ -31,13 +31,13 @@ struct ContentView: View {
     
     
     var body: some View {
-        HStack {
-            menuIcon
-            ZStack {
-                MapView(currentCoordinate: currentLocation, selection: $selection)
-                SearchBar()
-            }
-        }
+        MapView(currentCoordinate: currentLocation, selection: $selection)
+            .edgesIgnoringSafeArea(.all)
+            .overlay(
+                HStack {
+                    menuIcon
+                    SearchBar()
+                }, alignment: .topLeading)
     }
     
     private var menuIcon: some View {
@@ -58,7 +58,6 @@ struct ContentView_Previews:
         Group {
             ContentView()
                 .previewLayout(.sizeThatFits)
-            ContentView()
         }
     }
 }

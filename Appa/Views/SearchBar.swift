@@ -13,16 +13,17 @@ struct SearchBar: View {
     //@State private var isEditing = false
     
     var body: some View {
-        ZStack {
-            TextField("Search...", text: $text, onEditingChanged: { began in
+        HStack {
+            Image(systemName: "magnifyingglass").imageScale(.large)
+            TextField("Search Here", text: $text, onEditingChanged: { began in
                 if !began {
                 }
             })
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray))
-                .cornerRadius(8)
-                .padding(.horizontal, 10)
         }
+        .padding(7)
+        .padding(.horizontal, 25)
+        .background(Color(.systemGray))
+        .cornerRadius(8)
+        .padding(.horizontal, 10)
     }
 }
