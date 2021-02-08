@@ -11,9 +11,11 @@ import UIKit
 import MapKit
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    //@Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var locationManager = LocationManager()
     @State var selection: MKAnnotation?
+    @State private var showSearchBar = false
+    @State private var showMenu = false
     
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
@@ -29,21 +31,26 @@ struct ContentView: View {
     
     
     var body: some View {
-//        ZStack {
-//            MapView(currentCoordinate: currentLocation, selection: $selection)
-//            VStack{
-//                SearchBar()
-//                    .frame(maxHeight: 100, alignment: .topLeading)
-//                Spacer()
-//            }
-//        }
-//        MenuView()
-//        MapView(currentCoordinate: currentLocation, selection: $selection)
-//            .overlay(
-//                LocationSearch().foregroundColor(.accentColor),
-//                alignment: .topLeading
-//        )
-        LocationSearch()
-            .foregroundColor(.blue)
+        HStack {
+            Image(systemName: "menubar.rectangle")
+                .imageScale(.large)
+                .onTapGesture {
+                    showMenu = true
+                }
+                .sheet(isPresented: $showMenu, content: {
+                    MenuView()
+                })
+        }
+    }
+}
+
+struct ContentView_Previews:
+    PreviewProvider {
+    static var previews: some View {
+        Group {
+            ContentView()
+                .previewLayout(.sizeThatFits)
+            ContentView()
+        }
     }
 }

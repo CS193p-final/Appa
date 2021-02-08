@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import MapKit
+import UIKit
 
 struct MenuView: View {
     var user = Person(firstName: "First", lastName: "Last")
+    @ObservedObject var locationManager = LocationManager()
+    var currentLocation: CLLocationCoordinate2D? {
+        locationManager.lastLocation?.coordinate
+    }
+    @State var selection: MKAnnotation?
+
     var body: some View {
         VStack {
             NavigationView {
@@ -33,6 +41,14 @@ struct MenuView: View {
                         label: {
                             Text("Settings")
                         })
+                    NavigationLink(
+                        destination: MapView(currentCoordinate: currentLocation, selection: $selection)
+                            .edgesIgnoringSafeArea(.all)
+                            .overlay(SearchBar(), alignment: .topLeading),
+                        label: {
+                            Text("Map")
+                        })
+
 
                 }
                 .navigationTitle(Text("Menu"))
