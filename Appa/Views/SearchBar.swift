@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchBarBoo: View {
+struct SearchBar: View {
     @State var text: String = ""
     
     //@State private var isEditing = false

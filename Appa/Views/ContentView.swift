@@ -29,14 +29,21 @@ struct ContentView: View {
     
     
     var body: some View {
-        ZStack {
-            //MapView(currentCoordinate: currentLocation, selection: $selection)
-            VStack{
-                SearchBarBoo()
-                    //.frame(maxHeight: 100, alignment: .topLeading)
-                Spacer()
-            }
-        }
-        MenuView()
+//        ZStack {
+//            MapView(currentCoordinate: currentLocation, selection: $selection)
+//            VStack{
+//                SearchBar()
+//                    .frame(maxHeight: 100, alignment: .topLeading)
+//                Spacer()
+//            }
+//        }
+//        MenuView()
+//        MapView(currentCoordinate: currentLocation, selection: $selection)
+//            .overlay(
+//                LocationSearch().foregroundColor(.accentColor),
+//                alignment: .topLeading
+//        )
+        LocationSearch()
+            .foregroundColor(.blue)
     }
 }

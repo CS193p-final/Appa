@@ -27,6 +27,7 @@
 		C66D86DA25CA55CD0037DAE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D925CA55CD0037DAE1 /* Preview Assets.xcassets */; };
 		C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DB25CA55CD0037DAE1 /* Persistence.swift */; };
 		C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */; };
+		C6BC05FF25D0A07C006F24F4 /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C66D86DB25CA55CD0037DAE1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C66D86DE25CA55CD0037DAE1 /* Appa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appa.xcdatamodel; sourceTree = "<group>"; };
 		C66D86E025CA55CD0037DAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
 				C110FD0A25D083C500A64E11 /* CircleImage.swift */,
 				C604CAE525CE261E00DF385B /* SearchBar.swift */,
+				C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
 				C1647F9725D0850D00C96941 /* MapView.swift in Sources */,
+				C6BC05FF25D0A07C006F24F4 /* LocationSearch.swift in Sources */,
 				C110FD0B25D083C500A64E11 /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

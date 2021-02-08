@@ -22,10 +22,10 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        if let coordinate = currentCoordinate {
-            let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            uiView.setRegion(MKCoordinateRegion(center: coordinate, span: town), animated: true)
-        }
+//        if let coordinate = currentCoordinate {
+//            let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+//            uiView.setRegion(MKCoordinateRegion(center: coordinate, span: town), animated: true)
+//        }
     }
     
     func makeCoordinator() -> Coordinator {
