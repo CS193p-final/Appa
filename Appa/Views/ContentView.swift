@@ -13,6 +13,7 @@ import MapKit
 struct ContentView: View {
     //@Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var locationManager = LocationManager()
+    @ObservedObject var locationService = LocationService()
     @State var selection: MKAnnotation?
     @State private var showSearchBar = false
     @State private var showMenu = false
@@ -39,6 +40,39 @@ struct ContentView: View {
                     SearchBar()
                 }, alignment: .topLeading)
     }
+    
+    var search: some View {
+        VStack {
+            Form {
+                Section(header: Text("Location Search")) {
+                    ZStack(alignment: .trailing) {
+                        TextField("Search", text: $locationService.queryFragment)
+                        if locationService.status == .isSearching {
+                            Image(systemName: "clock")
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+                Section(header: Text("Results")) {
+                    List {
+                        Group {
+                            switch locationService.status {
+                            case .noResult: Text("No result")
+                            case .error(let errMsg): Text("Error: \(errMsg)")
+                            default: EmptyView()
+                            }
+                        }
+                        .foregroundColor(.gray)
+                        
+                        ForEach(locationService.searchResults, id: \.self) { completionResult in
+                            Text(completionResult.title)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     
     private var menuIcon: some View {
         Image(systemName: "menubar.rectangle")
