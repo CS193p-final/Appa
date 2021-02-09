@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */; };
 		C110FD0B25D083C500A64E11 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C110FD0A25D083C500A64E11 /* CircleImage.swift */; };
+		C11FFA6625D22E1C002E20A1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFA6425D22E1B002E20A1 /* Grid.swift */; };
+		C11FFA6725D22E1C002E20A1 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFA6525D22E1C002E20A1 /* GridLayout.swift */; };
 		C1647F9725D0850D00C96941 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9625D0850D00C96941 /* MapView.swift */; };
 		C1647F9A25D0851500C96941 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9925D0851500C96941 /* AchievementView.swift */; };
 		C1647FA225D0859300C96941 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1647F9C25D0859300C96941 /* MemoryView.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		C110FCFB25D07AFE00A64E11 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C110FD0A25D083C500A64E11 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		C11FFA6425D22E1B002E20A1 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C11FFA6525D22E1C002E20A1 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		C1647F9625D0850D00C96941 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C1647F9925D0851500C96941 /* AchievementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		C1647F9C25D0859300C96941 /* MemoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		C66D86D125CA55CC0037DAE1 /* Appa */ = {
 			isa = PBXGroup;
 			children = (
+				C11FFA6425D22E1B002E20A1 /* Grid.swift */,
+				C11FFA6525D22E1C002E20A1 /* GridLayout.swift */,
 				C604CABC25CCF0D400DF385B /* Appa.entitlements */,
 				C66D86E825CA56AD0037DAE1 /* Views */,
 				C66D86D225CA55CC0037DAE1 /* AppaApp.swift */,
@@ -223,9 +229,11 @@
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
 				C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
+				C11FFA6725D22E1C002E20A1 /* GridLayout.swift in Sources */,
 				C1647F9725D0850D00C96941 /* MapView.swift in Sources */,
 				C6BC05FF25D0A07C006F24F4 /* LocationSearch.swift in Sources */,
 				C110FD0B25D083C500A64E11 /* CircleImage.swift in Sources */,
+				C11FFA6625D22E1C002E20A1 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

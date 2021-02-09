@@ -32,7 +32,7 @@ struct MenuView: View {
                             Text("Achievement")
                         })
                     NavigationLink(
-                        destination: MemoryView(),
+                        destination: MemoryView(placeVisited: user.placesVisited),
                         label: {
                             Text("Memory")
                         })

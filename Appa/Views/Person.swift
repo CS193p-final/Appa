@@ -12,6 +12,7 @@ struct Person {
     var firstName: String
     var lastName: String
     var pfp: UIImage = UIImage(systemName: "person")!
+    var placesVisited = [Place]()
     
     init(firstName: String, lastName: String) {
         self.firstName = firstName
@@ -28,5 +29,9 @@ struct Person {
     
     mutating func renameLastname(to newName: String) {
         lastName = newName
+    }
+    
+    mutating func addPlace(place: Place) {
+        placesVisited.append(place)
     }
 }

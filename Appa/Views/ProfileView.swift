@@ -79,12 +79,11 @@ struct ImageSourceChooser: View {
                     showImagePicker = true
                     imageSourceType = .photoLibrary
                 }
-        }
-        .sheet(isPresented: $showImagePicker, content: {
-            ImagePicker(currentImage: user.pfp, sourceType: imageSourceType) {
-                image in
+                .popover(isPresented: $showImagePicker, content: { ImagePicker(sourceType: imageSourceType) { image in
                     user.changePfp(newPfp: image)
-                }
-            })
+                        }
+                    }
+                )
+            }
     }
 }

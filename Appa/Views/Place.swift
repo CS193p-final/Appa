@@ -8,11 +8,26 @@
 import Foundation
 import UIKit
 import MapKit
+import SwiftUI
 
-class Place: NSObject, MKAnnotation {
+class Place: NSObject, MKAnnotation, Identifiable {
+    var name: String
     var coordinate: CLLocationCoordinate2D
+    var photos: [UIImage]?
+    var journal: String = ""
+    var id: UUID
     
-    init(coordinate: CLLocationCoordinate2D) {
+    init(name: String, coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
+        self.name = name
+        self.id = UUID()
+    }
+    
+    func addImage(image: UIImage) {
+        photos?.append(image)
+    }
+    
+    func addJournal(journal: String) {
+        self.journal = journal
     }
 }
