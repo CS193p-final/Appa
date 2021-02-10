@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import SwiftUI
 
-class Place: NSObject, MKAnnotation, Identifiable {
+class Place: NSObject, MKAnnotation, Identifiable, ObservableObject {
     var name: String
     var coordinate: CLLocationCoordinate2D
     var photos: [UIImage]?

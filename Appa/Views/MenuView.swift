@@ -27,12 +27,12 @@ struct MenuView: View {
                             Text("Profile")
                         })
                     NavigationLink(
-                        destination: AchievementView(),
+                        destination: AchievementView(user: user),
                         label: {
                             Text("Achievement")
                         })
                     NavigationLink(
-                        destination: MemoryView(placeVisited: user.placesVisited),
+                        destination: MemoryView(placesVisited: user.placesVisited),
                         label: {
                             Text("Memory")
                         })
@@ -40,17 +40,8 @@ struct MenuView: View {
                         destination: SettingsView(),
                         label: {
                             Text("Settings")
-                        })
-                    NavigationLink(
-                        destination: MapView(currentCoordinate: currentLocation, selection: $selection)
-                            .edgesIgnoringSafeArea(.all)
-                            .overlay(SearchBar(), alignment: .topLeading),
-                        label: {
-                            Text("Map")
-                        })
-
-
-                }
+                        }
+                    )                }
                 .navigationTitle(Text("Menu"))
             }
         }
