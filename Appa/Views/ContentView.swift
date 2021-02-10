@@ -15,7 +15,7 @@ struct ContentView: View {
     @ObservedObject var locationManager = LocationManager()
     @ObservedObject var locationService = LocationService()
     @State var selection: MKAnnotation?
-    @State private var showSearchBar = false
+    @State private var showSearchView = false
     @State private var showMenu = false
     
     var userLatitude: String {
@@ -32,16 +32,24 @@ struct ContentView: View {
     
     
     var body: some View {
-        MapView(currentCoordinate: currentLocation, selection: $selection)
-            .edgesIgnoringSafeArea(.all)
-            .overlay(
-                HStack {
-                    menuIcon
-                    SearchBar()
-                }, alignment: .topLeading)
+        if !showSearchView {
+            MapView(currentCoordinate: currentLocation, selection: $selection)
+                .edgesIgnoringSafeArea(.all)
+                .overlay(
+                    HStack {
+                        menuIcon
+                        SearchView()
+                            .onTapGesture {
+                                showSearchView = true
+                            }
+                    }, alignment: .topLeading)
+        }
+        else {
+            searchView
+        }
     }
     
-    var search: some View {
+    var searchView: some View {
         VStack {
             Form {
                 Section(header: Text("Location Search")) {

@@ -23,7 +23,7 @@
 		C1B40A7E25CB2FC90051CB42 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B40A7D25CB2FC90051CB42 /* LocationManager.swift */; };
 		C604CABF25CCF0D800DF385B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CABE25CCF0D800DF385B /* CloudKit.framework */; };
 		C604CAE325CE172000DF385B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C604CAE225CE172000DF385B /* MapKit.framework */; };
-		C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604CAE525CE261E00DF385B /* SearchBar.swift */; };
+		C604CAE625CE261E00DF385B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604CAE525CE261E00DF385B /* SearchView.swift */; };
 		C65B78E625D22F6800B5431E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B78E525D22F6800B5431E /* LocationService.swift */; };
 		C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D225CA55CC0037DAE1 /* AppaApp.swift */; };
 		C66D86D525CA55CC0037DAE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86D425CA55CC0037DAE1 /* ContentView.swift */; };
@@ -52,7 +52,7 @@
 		C604CABC25CCF0D400DF385B /* Appa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appa.entitlements; sourceTree = "<group>"; };
 		C604CABE25CCF0D800DF385B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C604CAE225CE172000DF385B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C604CAE525CE261E00DF385B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		C604CAE525CE261E00DF385B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C65B78E525D22F6800B5431E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		C66D86CF25CA55CC0037DAE1 /* Appa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66D86D225CA55CC0037DAE1 /* AppaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppaApp.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				C1647F9625D0850D00C96941 /* MapView.swift */,
 				C66D86D425CA55CC0037DAE1 /* ContentView.swift */,
 				C110FD0A25D083C500A64E11 /* CircleImage.swift */,
-				C604CAE525CE261E00DF385B /* SearchBar.swift */,
+				C604CAE525CE261E00DF385B /* SearchView.swift */,
 				C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */,
 			);
 			path = Views;
@@ -234,7 +234,7 @@
 				C1647FA725D0859300C96941 /* MenuView.swift in Sources */,
 				C1647FA225D0859300C96941 /* MemoryView.swift in Sources */,
 				C66D86D325CA55CC0037DAE1 /* AppaApp.swift in Sources */,
-				C604CAE625CE261E00DF385B /* SearchBar.swift in Sources */,
+				C604CAE625CE261E00DF385B /* SearchView.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
 				C11FFA6725D22E1C002E20A1 /* GridLayout.swift in Sources */,
 				C1647F9725D0850D00C96941 /* MapView.swift in Sources */,
