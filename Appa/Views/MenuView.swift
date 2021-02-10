@@ -44,7 +44,7 @@ struct MenuView: View {
                     NavigationLink(
                         destination: MapView(currentCoordinate: currentLocation, selection: $selection)
                             .edgesIgnoringSafeArea(.all)
-                            .overlay(SearchBar(), alignment: .topLeading),
+                            .overlay(SearchView(), alignment: .topLeading),
                         label: {
                             Text("Map")
                         })
