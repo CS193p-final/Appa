@@ -10,22 +10,29 @@ import UIKit
 import MapKit
 
 struct MemoryView: View {
-    @State var placesVisited: [Place]
+    @EnvironmentObject var user: Person
     @State private var showImageSourceChooser = false
     var body: some View {
-        List {
-            ForEach(placesVisited) { place in
-                Text(place.name)
-                Image(systemName: "plus")
-                    .onTapGesture {
-                        showImageSourceChooser = true
-                    }
-                    .popover(isPresented: $showImageSourceChooser, content: {
-                        ImageSourcePicker(showImageSourceChooser: $showImageSourceChooser, place: placesVisited[placesVisited.firstIndex(matching: place)!])
-                    })
-                if place.photos != nil {
-                    Grid(place.photos!, id: \.self) { photo in
+        VStack {
+            Button {
+                user.addPlace(place: Place(name: "Hanoi", coordinate: CLLocationCoordinate2D(latitude: 21.0278, longitude: 105.8342)))
+            } label: {
+                Text("Add place")
+            }
+            List {
+                ForEach(user.placesVisited) { place in
+                    Text(place.name)
+                    Image(systemName: "plus")
+                        .onTapGesture {
+                            showImageSourceChooser = true
+                        }
+                        .popover(isPresented: $showImageSourceChooser, content: {
+                            MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: user.placesVisited[user.placesVisited.firstIndex(matching: place)!])
+                        })
+                    Grid(place.photos, id: \.self) { photo in
                         Image(uiImage: photo)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
                     }
                 }
             }
@@ -33,12 +40,13 @@ struct MemoryView: View {
     }
 }
 
-struct ImageSourcePicker: View {
+struct MemoryImageSourceChooser: View {
     @Binding var showImageSourceChooser: Bool
     @State private var imageSourceType = UIImagePickerController.SourceType.photoLibrary
     @State private var showImagePicker = false
-    @ObservedObject var place: Place
-    
+    @EnvironmentObject var user: Person
+    @State var place: Place
+
     var body: some View {
         Text("Add photo to \(place.name)").font(.headline)
         Divider()
@@ -58,7 +66,7 @@ struct ImageSourcePicker: View {
                 .popover(isPresented: $showImagePicker, content: {
                     ImagePicker(sourceType: imageSourceType) {
                         image in
-                        place.addImage(image: image)
+                        user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
                     }
                 }
             )
@@ -67,9 +75,7 @@ struct ImageSourcePicker: View {
 }
 
 struct MemoryView_Previews: PreviewProvider {
-    static var hanoi = Place(name: "Hanoi", coordinate: CLLocationCoordinate2D.init(latitude: 21.0278, longitude: 105.8342))
-    static var placesVisit = [hanoi]
     static var previews: some View {
-        MemoryView(placesVisited: placesVisit)
+        MemoryView()
     }
 }

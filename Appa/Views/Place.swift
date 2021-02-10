@@ -13,7 +13,7 @@ import SwiftUI
 class Place: NSObject, MKAnnotation, Identifiable, ObservableObject {
     var name: String
     var coordinate: CLLocationCoordinate2D
-    var photos: [UIImage]?
+    var photos = [UIImage]()
     var journal: String = ""
     var id: UUID
     
@@ -24,7 +24,8 @@ class Place: NSObject, MKAnnotation, Identifiable, ObservableObject {
     }
     
     func addImage(image: UIImage) {
-        photos?.append(image)
+        photos.append(image)
+        print("images: \(photos.count)")
     }
     
     func addJournal(journal: String) {

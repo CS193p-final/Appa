@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var user: Person
+    @EnvironmentObject var user: Person
     @State private var showImageSourceChooser = false
     @State private var isRenaming = false
     @State private var firstName: String = ""
@@ -23,7 +23,7 @@ struct ProfileView: View {
                     showImageSourceChooser = true
                 }
                 .popover(isPresented: $showImageSourceChooser, content: {
-                    ImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, user: $user)
+                    ProfileImageSourceChooser(showImageSourceChooser: $showImageSourceChooser).environmentObject(user)
                 })
             HStack {
                 TextField("First name", text: $firstName, onEditingChanged: { began in
@@ -31,12 +31,16 @@ struct ProfileView: View {
                         user.renameFirstname(to: firstName)
                     }
                 })
+                .frame(maxWidth: 100)
+                .padding()
                 
                 TextField("Last name", text: $lastName, onEditingChanged: { began in
                     if !began {
                         user.renameLastname(to: lastName)
                     }
                 })
+                .frame(maxWidth: 100)
+                .padding()
             }
             .font(.system(size: nameFont))
             Spacer()
@@ -53,15 +57,15 @@ struct ProfileView_Previews:
     PreviewProvider {
     static var user = Person(firstName: "First", lastName: "Last")
     static var previews: some View {
-        ProfileView(user: user)
+        ProfileView().environmentObject(user)
     }
 }
 
-struct ImageSourceChooser: View {
+struct ProfileImageSourceChooser: View {
     @Binding var showImageSourceChooser: Bool
     @State private var imageSourceType = UIImagePickerController.SourceType.photoLibrary
     @State private var showImagePicker = false
-    @Binding var user: Person
+    @EnvironmentObject var user: Person
     
     var body: some View {
         Text("Change Profile Photo").font(.headline)

@@ -37,7 +37,7 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
                 .overlay(
                     HStack {
-                        menuIcon
+                        menuIcon.padding(.leading)
                         SearchView()
                             .onTapGesture {
                                 showSearchView = true

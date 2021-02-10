@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct AchievementView: View {
-    var user: Person
+    @EnvironmentObject var user: Person
     var body: some View {
+
+
         Text("You have visited \(user.placesVisited.count) places")
+        if (user.placesVisited.count == 0) {
+            Image(systemName: "tortoise.fill").imageScale(.large)
+        } else {
+            Image(systemName: "hare.fill").imageScale(.large)
+        }
     }
 }
 
 struct AchievementView_Previews: PreviewProvider {
     static var user = Person(firstName: "First", lastName: "Last")
     static var previews: some View {
-        AchievementView(user: user)
+        AchievementView().environmentObject(user)
     }
 }

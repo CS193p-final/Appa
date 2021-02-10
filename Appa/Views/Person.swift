@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Person {
+class Person: ObservableObject {
     var firstName: String
     var lastName: String
     var pfp: UIImage = UIImage(systemName: "person")!
@@ -19,19 +19,20 @@ struct Person {
         self.lastName = lastName
     }
     
-    mutating func changePfp(newPfp: UIImage) {
+    func changePfp(newPfp: UIImage) {
         pfp = newPfp
     }
     
-    mutating func renameFirstname(to newName: String) {
+    func renameFirstname(to newName: String) {
         firstName = newName
     }
     
-    mutating func renameLastname(to newName: String) {
+    func renameLastname(to newName: String) {
         lastName = newName
     }
     
-    mutating func addPlace(place: Place) {
+    func addPlace(place: Place) {
         placesVisited.append(place)
+        print("visited: \(placesVisited.count)")
     }
 }

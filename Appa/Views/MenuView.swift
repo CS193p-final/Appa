@@ -22,17 +22,17 @@ struct MenuView: View {
             NavigationView {
                 List(){
                     NavigationLink(
-                        destination: ProfileView(user: user),
+                        destination: ProfileView().environmentObject(user),
                         label: {
                             Text("Profile")
                         })
                     NavigationLink(
-                        destination: AchievementView(user: user),
+                        destination: AchievementView().environmentObject(user),
                         label: {
                             Text("Achievement")
                         })
                     NavigationLink(
-                        destination: MemoryView(placesVisited: user.placesVisited),
+                        destination: MemoryView().environmentObject(user),
                         label: {
                             Text("Memory")
                         })
