@@ -22,7 +22,7 @@ struct AchievementView: View {
 }
 
 struct AchievementView_Previews: PreviewProvider {
-    static var user = Person(firstName: "First", lastName: "Last")
+    static var user = Person(name: "Last First", placesVisited: [Place]())
     static var previews: some View {
         AchievementView().environmentObject(user)
     }

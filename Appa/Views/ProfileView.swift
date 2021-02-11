@@ -11,8 +11,7 @@ struct ProfileView: View {
     @EnvironmentObject var user: Person
     @State private var showImageSourceChooser = false
     @State private var isRenaming = false
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
+    @State private var name: String = ""
     
     var body: some View {
         VStack {
@@ -25,23 +24,12 @@ struct ProfileView: View {
                 .popover(isPresented: $showImageSourceChooser, content: {
                     ProfileImageSourceChooser(showImageSourceChooser: $showImageSourceChooser).environmentObject(user)
                 })
-            HStack {
-                TextField("First name", text: $firstName, onEditingChanged: { began in
-                    if !began {
-                        user.renameFirstname(to: firstName)
-                    }
-                })
-                .frame(maxWidth: 100)
-                .padding()
-                
-                TextField("Last name", text: $lastName, onEditingChanged: { began in
-                    if !began {
-                        user.renameLastname(to: lastName)
-                    }
-                })
-                .frame(maxWidth: 100)
-                .padding()
-            }
+
+            TextField("Name", text: $name, onEditingChanged: { began in
+                if !began {
+                    user.rename(to: name)
+                }
+            })
             .font(.system(size: nameFont))
             Spacer()
         }
@@ -55,7 +43,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews:
     PreviewProvider {
-    static var user = Person(firstName: "First", lastName: "Last")
+    static var user = Person(name: "last first", placesVisited: [Place]())
     static var previews: some View {
         ProfileView().environmentObject(user)
     }

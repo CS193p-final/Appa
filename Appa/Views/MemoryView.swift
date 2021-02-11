@@ -21,22 +21,31 @@ struct MemoryView: View {
             }
             List {
                 ForEach(user.placesVisited) { place in
-                    Text(place.name)
-                    Image(systemName: "plus")
-                        .onTapGesture {
-                            showImageSourceChooser = true
+                    VStack {
+                        Text(place.name)
+                        Image(systemName: "plus")
+                            .onTapGesture {
+                                showImageSourceChooser = true
+                            }
+                            .popover(isPresented: $showImageSourceChooser, content: {
+                                MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: place)
+                            }
+                        )
+                        Grid(place.photos, id: \.self) { photo in
+                            Image(uiImage: UIImage(data: Data(base64Encoded: photo)!)!)
+                                .resizable()
+                                .padding(5)
+                                .frame(width: 100, height: 100)
                         }
-                        .popover(isPresented: $showImageSourceChooser, content: {
-                            MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: user.placesVisited[user.placesVisited.firstIndex(matching: place)!])
-                        })
-                    Grid(place.photos, id: \.self) { photo in
-                        Image(uiImage: photo)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                        //.frame(height: photoHeight)
                     }
                 }
             }
         }
+    }
+    
+    var photoHeight: CGFloat {
+        CGFloat((user.placesVisited.count - 1) / 3) * 70 + 70
     }
 }
 
@@ -63,14 +72,15 @@ struct MemoryImageSourceChooser: View {
                     showImagePicker = true
                     imageSourceType = .photoLibrary
                 }
-                .popover(isPresented: $showImagePicker, content: {
-                    ImagePicker(sourceType: imageSourceType) {
-                        image in
-                        user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
-                    }
-                }
-            )
+            }
+        .popover(isPresented: $showImagePicker, content: {
+            ImagePicker(sourceType: imageSourceType) {
+                image in
+                user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
+            }
         }
+    )
+
     }
 }
 

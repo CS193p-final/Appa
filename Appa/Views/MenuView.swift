@@ -10,7 +10,7 @@ import MapKit
 import UIKit
 
 struct MenuView: View {
-    var user = Person(firstName: "First", lastName: "Last")
+    var user = Person(name: "last first", placesVisited: [Place]())
     @ObservedObject var locationManager = LocationManager()
     var currentLocation: CLLocationCoordinate2D? {
         locationManager.lastLocation?.coordinate

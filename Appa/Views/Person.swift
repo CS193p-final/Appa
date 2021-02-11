@@ -7,32 +7,51 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class Person: ObservableObject {
-    var firstName: String
-    var lastName: String
+    var name: String
     var pfp: UIImage = UIImage(systemName: "person")!
-    var placesVisited = [Place]()
-    
-    init(firstName: String, lastName: String) {
-        self.firstName = firstName
-        self.lastName = lastName
+    @Published var placesVisited: [Place]
+    var autosave: AnyCancellable?
+        
+    init(name: String, placesVisited: [Place]) {
+        self.name = name
+        let defaultsKey = "User.\(name)"
+        self.placesVisited = Array(fromPropertyList: UserDefaults.standard.object(forKey: defaultsKey))
+        autosave = $placesVisited.sink { placesVisited in
+            UserDefaults.standard.set(placesVisited.asPropertyList, forKey: defaultsKey)
+        }
     }
     
     func changePfp(newPfp: UIImage) {
         pfp = newPfp
     }
-    
-    func renameFirstname(to newName: String) {
-        firstName = newName
-    }
-    
-    func renameLastname(to newName: String) {
-        lastName = newName
+
+    func rename(to newName: String) {
+        name = newName
     }
     
     func addPlace(place: Place) {
         placesVisited.append(place)
         print("visited: \(placesVisited.count)")
+    }
+}
+
+extension Array where Element == Place {
+    var asPropertyList: [Data?] {
+        var dataArray = [Data?]()
+        for (element) in self {
+            dataArray.append(element.json)
+        }
+        return dataArray
+    }
+    
+    init(fromPropertyList plist: Any?) {
+        self.init()
+        let dataArray = plist as? [Data?] ?? []
+        for data in dataArray {
+            self.append(Place(json: data)!)
+        }
     }
 }
