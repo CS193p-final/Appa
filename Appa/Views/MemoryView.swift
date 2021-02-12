@@ -12,6 +12,7 @@ import MapKit
 struct MemoryView: View {
     @EnvironmentObject var user: Person
     @State private var showImageSourceChooser = false
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         VStack {
             Button {
@@ -20,24 +21,31 @@ struct MemoryView: View {
                 Text("Add place")
             }
             List {
-                ForEach(user.placesVisited) { place in
-                    VStack {
-                        Text(place.name)
-                        Image(systemName: "plus")
-                            .onTapGesture {
-                                showImageSourceChooser = true
+                VStack {
+                    ForEach(user.placesVisited) { place in
+                        VStack {
+                            Text(place.name)
+                            Image(systemName: "plus")
+                                .onTapGesture {
+                                    showImageSourceChooser = true
+                                }
+                            Divider()
+                            GeometryReader { geometry in
+                                ScrollView{
+                                    LazyVGrid(columns: gridItemLayout, spacing: 3) {
+                                        ForEach(place.photos, id: \.self) { photo in
+                                            Image(uiImage: UIImage(data: Data(base64Encoded: photo!)!)!)
+                                                .resizable()
+                                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 3)
+                                        }
+                                    }
+                                }
                             }
-                            .popover(isPresented: $showImageSourceChooser, content: {
-                                MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: place)
-                            }
-                        )
-                        Grid(place.photos, id: \.self) { photo in
-                            Image(uiImage: UIImage(data: Data(base64Encoded: photo)!)!)
-                                .resizable()
-                                .padding(5)
-                                .frame(width: 100, height: 100)
+                            .frame(height: 400)
                         }
-                        //.frame(height: photoHeight)
+                        .popover(isPresented: $showImageSourceChooser, content: {
+                            MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: place)
+                        })
                     }
                 }
             }
@@ -45,7 +53,7 @@ struct MemoryView: View {
     }
     
     var photoHeight: CGFloat {
-        CGFloat((user.placesVisited.count - 1) / 3) * 70 + 70
+        CGFloat((user.placesVisited.count - 1) / 6) * 70 + 70
     }
 }
 

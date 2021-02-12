@@ -11,10 +11,10 @@ import MapKit
 import SwiftUI
 
 typealias CLLocationDegrees = Double
-class Place: NSObject, MKAnnotation, Identifiable, Codable {
+class Place: NSObject, MKAnnotation, Identifiable, Codable, ObservableObject {
     var name: String
     var coordinate: CLLocationCoordinate2D
-    var photos = [Data]()
+    var photos = [String?]()
     var journal: String = ""
     var id: UUID
     
@@ -25,6 +25,8 @@ class Place: NSObject, MKAnnotation, Identifiable, Codable {
     convenience init?(json: Data?) {
         if json != nil, let newPlace = try? JSONDecoder().decode(Place.self, from: json!) {
             self.init(name: newPlace.name, coordinate: newPlace.coordinate)
+            self.photos = newPlace.photos
+            self.journal = newPlace.journal
         } else {
             return nil
         }
@@ -37,8 +39,8 @@ class Place: NSObject, MKAnnotation, Identifiable, Codable {
     }
     
     func addImage(image: UIImage) {
-        let imageData = image.pngData()
-        photos.append(imageData!)
+        let imageData = image.toBase64(format: .png)
+        photos.append(imageData)
         print("images: \(photos.count)")
     }
     
@@ -67,3 +69,28 @@ extension CLLocationCoordinate2D: Codable {
     }
 }
 
+// Mark: UIImage encode Base64 String
+extension UIImage {
+    enum imageFormat {
+        case png
+        case jpeg(CGFloat)
+    }
+    
+    func toBase64(format: imageFormat) -> String? {
+        var imageData: Data?
+        switch format {
+        case .png: imageData = self.pngData()
+        case .jpeg(let compression):
+            imageData = self.jpegData(compressionQuality: compression)
+        }
+        
+        return imageData?.base64EncodedString()
+    }
+    
+    func cropUIImage(to geometry: GeometryProxy) -> UIImage {
+        let rect = CGRect(x: geometry.size.width + 5, y: 0, width: geometry.size.width, height: geometry.size.height)
+        let cgimage = self.cgImage!
+        cgimage.cropping(to: rect)
+        return UIImage(cgImage: cgimage)
+    }
+}

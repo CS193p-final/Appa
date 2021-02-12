@@ -17,7 +17,7 @@ class Person: ObservableObject {
         
     init(name: String, placesVisited: [Place]) {
         self.name = name
-        let defaultsKey = "User.\(name)"
+        let defaultsKey = "User"
         self.placesVisited = Array(fromPropertyList: UserDefaults.standard.object(forKey: defaultsKey))
         autosave = $placesVisited.sink { placesVisited in
             UserDefaults.standard.set(placesVisited.asPropertyList, forKey: defaultsKey)
