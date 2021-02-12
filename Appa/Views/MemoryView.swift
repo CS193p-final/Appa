@@ -63,6 +63,7 @@ struct MemoryImageSourceChooser: View {
     @State private var showImagePicker = false
     @EnvironmentObject var user: Person
     @State var place: Place
+    @State var showAlertForOverlappingImage = false
 
     var body: some View {
         Text("Add photo to \(place.name)").font(.headline)
@@ -84,7 +85,14 @@ struct MemoryImageSourceChooser: View {
         .popover(isPresented: $showImagePicker, content: {
             ImagePicker(sourceType: imageSourceType) {
                 image in
-                user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
+                if place.photos.contains(image.toBase64(format: .png)) {
+                    showAlertForOverlappingImage = true
+                } else {
+                    user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
+                }
+            }
+            .alert(isPresented: $showAlertForOverlappingImage) { () -> Alert in
+                .init(title: Text("Image is already in gallery"), message: Text("Image will not be dupilicated"), dismissButton: .cancel())
             }
         }
     )
