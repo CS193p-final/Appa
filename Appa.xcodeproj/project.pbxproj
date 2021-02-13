@@ -31,6 +31,9 @@
 		C66D86DA25CA55CD0037DAE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66D86D925CA55CD0037DAE1 /* Preview Assets.xcassets */; };
 		C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DB25CA55CD0037DAE1 /* Persistence.swift */; };
 		C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66D86DD25CA55CD0037DAE1 /* Appa.xcdatamodeld */; };
+		C66E6FD825D6278D00523A8E /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E6FD725D6278D00523A8E /* Landmark.swift */; };
+		C66E6FDB25D62A5800523A8E /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E6FDA25D62A5800523A8E /* LandmarkAnnotation.swift */; };
+		C66E6FDE25D62F5F00523A8E /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66E6FDD25D62F5F00523A8E /* PlaceListView.swift */; };
 		C6BC05FF25D0A07C006F24F4 /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,9 @@
 		C66D86DB25CA55CD0037DAE1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C66D86DE25CA55CD0037DAE1 /* Appa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Appa.xcdatamodel; sourceTree = "<group>"; };
 		C66D86E025CA55CD0037DAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66E6FD725D6278D00523A8E /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		C66E6FDA25D62A5800523A8E /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
+		C66E6FDD25D62F5F00523A8E /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,7 @@
 		C66D86D125CA55CC0037DAE1 /* Appa */ = {
 			isa = PBXGroup;
 			children = (
+				C66E6FD625D6274300523A8E /* Models */,
 				C19E962425D37A7B003E4470 /* Array+Identifiable.swift */,
 				C11FFA6425D22E1B002E20A1 /* Grid.swift */,
 				C11FFA6525D22E1C002E20A1 /* GridLayout.swift */,
@@ -148,8 +155,18 @@
 				C110FD0A25D083C500A64E11 /* CircleImage.swift */,
 				C604CAE525CE261E00DF385B /* SearchView.swift */,
 				C6BC05FE25D0A07C006F24F4 /* LocationSearch.swift */,
+				C66E6FDD25D62F5F00523A8E /* PlaceListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C66E6FD625D6274300523A8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C66E6FD725D6278D00523A8E /* Landmark.swift */,
+				C66E6FDA25D62A5800523A8E /* LandmarkAnnotation.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66E6FDB25D62A5800523A8E /* LandmarkAnnotation.swift in Sources */,
 				C1647FA625D0859300C96941 /* Person.swift in Sources */,
+				C66E6FD825D6278D00523A8E /* Landmark.swift in Sources */,
 				C66D86DC25CA55CD0037DAE1 /* Persistence.swift in Sources */,
 				C1647FA425D0859300C96941 /* ProfileView.swift in Sources */,
 				C110FCFC25D07AFE00A64E11 /* ImagePicker.swift in Sources */,
@@ -237,6 +256,7 @@
 				C604CAE625CE261E00DF385B /* SearchView.swift in Sources */,
 				C66D86DF25CA55CD0037DAE1 /* Appa.xcdatamodeld in Sources */,
 				C11FFA6725D22E1C002E20A1 /* GridLayout.swift in Sources */,
+				C66E6FDE25D62F5F00523A8E /* PlaceListView.swift in Sources */,
 				C1647F9725D0850D00C96941 /* MapView.swift in Sources */,
 				C6BC05FF25D0A07C006F24F4 /* LocationSearch.swift in Sources */,
 				C65B78E625D22F6800B5431E /* LocationService.swift in Sources */,
@@ -372,7 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appa/Appa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Appa/Preview Content\"";
-				DEVELOPMENT_TEAM = DFDCS22GK9;
+				DEVELOPMENT_TEAM = F8WWCGPHV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Appa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -395,7 +415,7 @@
 				CODE_SIGN_ENTITLEMENTS = Appa/Appa.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Appa/Preview Content\"";
-				DEVELOPMENT_TEAM = DFDCS22GK9;
+				DEVELOPMENT_TEAM = F8WWCGPHV3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Appa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
