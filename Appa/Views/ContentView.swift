@@ -36,13 +36,16 @@ struct ContentView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-//            MapView(landmarks: landmarks)
-            TextField("Search", text: $searchString, onCommit:  {
-                getNearbyLandmarks()
-            })
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
-            .offset(y: 44)
+            MapView(landmarks: landmarks, currentCoordinate: currentLocation, selection: $selection)
+            HStack {
+                menuIcon
+                TextField("Search", text: $searchString, onCommit:  {
+                    getNearbyLandmarks()
+                })
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .offset(y: 44)
+            }
             
             PlaceListView(landmarks: landmarks) {
                 self.tapped.toggle()
@@ -53,14 +56,16 @@ struct ContentView: View {
     }
     
     private var menuIcon: some View {
-        Image(systemName: "menubar.rectangle")
-            .imageScale(.large)
-            .onTapGesture {
-                showMenu = true
-            }
-            .sheet(isPresented: $showMenu, content: {
-                MenuView()
-            })
+        Button {
+            showMenu = true
+        } label: {
+            Image(systemName: "menubar.rectangle")
+                .imageScale(.large)
+        }
+        .sheet(isPresented: $showMenu, content: {
+            MenuView()
+        })
+
     }
     
     private func getNearbyLandmarks() {
