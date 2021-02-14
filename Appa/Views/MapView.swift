@@ -10,9 +10,9 @@ import UIKit
 import MapKit
 
 struct MapView: UIViewRepresentable {
-    let landmarks: [Landmark]
     let currentCoordinate: CLLocationCoordinate2D?
     @Binding var selection: MKAnnotation?
+//    let annotations: [MKAnnotation]
     
     func makeUIView(context: Context) -> MKMapView {
         let mkMapView = MKMapView()
@@ -22,17 +22,14 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        updateAnnotations(from: uiView)
+        if let coordinate = currentCoordinate {
+            let town = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            uiView.setRegion(MKCoordinateRegion(center: coordinate, span: town), animated: true)
+        }
     }
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(selection: $selection)
-    }
-    
-    private func updateAnnotations(from mapView: MKMapView) {
-        mapView.removeAnnotations(mapView.annotations)
-        let annotations = landmarks.map(LandmarkAnnotation.init)
-        mapView.addAnnotations(annotations)
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
@@ -42,27 +39,16 @@ struct MapView: UIViewRepresentable {
             _selection = selection
         }
         
-        func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-            if let annotationView = views.first {
-                if let annotation = annotationView.annotation {
-                    if annotation is MKUserLocation {
-                        let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-                        mapView.setRegion(region, animated: true)
-                    }
-                }
-            }
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MapViewAnnotation") ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: "MapViewAnnotation")
+            view.canShowCallout = true
+            return view
         }
         
-//        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//            let view = mapView.dequeueReusableAnnotationView(withIdentifier: "MapViewAnnotation") ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: "MapViewAnnotation")
-//            view.canShowCallout = true
-//            return view
-//        }
-//
-//        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//            if let annotation = view.annotation {
-//                selection = annotation
-//            }
-//        }
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            if let annotation = view.annotation {
+                selection = annotation
+            }
+        }
     }
 }
