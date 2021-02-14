@@ -18,6 +18,10 @@ struct ContentView: View {
     @State private var showSearchView = false
     @State private var showMenu = false
     
+    @State private var landmarks = [Landmark]()
+    @State private var searchString = ""
+    @State private var tapped = false
+    
     var userLatitude: String {
         return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
     }
@@ -81,10 +85,21 @@ struct ContentView: View {
             .onTapGesture {
                 showMenu = true
             }
-            .sheet(isPresented: $showMenu, content: {
-                MenuView()
-            })
+        }
     }
+    
+    func calculateOffset() -> CGFloat {
+        if landmarks.count > 0 && !tapped {
+            return UIScreen.main.bounds.size.height - UIScreen.main.bounds.size.height / 4
+        }
+        else if self.tapped {
+            return 100
+        }
+        else {
+            return UIScreen.main.bounds.size.height
+        }
+    }
+    
 }
 
 struct ContentView_Previews:
