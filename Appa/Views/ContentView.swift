@@ -13,7 +13,6 @@ import MapKit
 struct ContentView: View {
     //@Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var locationManager = LocationManager()
-    @ObservedObject var locationService = LocationService()
     @State var selection: MKAnnotation?
     @State private var showSearchView = false
     @State private var showMenu = false
