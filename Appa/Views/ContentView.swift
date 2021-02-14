@@ -35,14 +35,7 @@ struct ContentView: View {
         if !showSearchView {
             MapView(currentCoordinate: currentLocation, selection: $selection)
                 .edgesIgnoringSafeArea(.all)
-                .overlay(
-                    HStack {
-                        menuIcon.padding(.leading)
-                        SearchView()
-                            .onTapGesture {
-                                showSearchView = true
-                            }
-                    }, alignment: .topLeading)
+                .overlay( SearchBarAndMenuView(), alignment: .topLeading)
         }
         else {
             searchView

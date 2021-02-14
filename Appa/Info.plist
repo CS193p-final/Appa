@@ -29,8 +29,6 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSCameraUsageDescription</key>
-	<string>i&apos;m your biggest fan I follow you until you love me papa paparazzi</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
@@ -48,6 +46,8 @@
 		<string>MKDirectionsModeTaxi</string>
 		<string>MKDirectionsModeTrain</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>i'm your biggest fan I follow you until you love me papa paparazzi</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>GIVE ME YOUR LOCATION!!!</string>
 	<key>UIApplicationSceneManifest</key>

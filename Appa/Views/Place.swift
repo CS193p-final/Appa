@@ -38,10 +38,12 @@ class Place: NSObject, MKAnnotation, Identifiable, Codable, ObservableObject {
         self.id = UUID()
     }
     
-    func addImage(image: UIImage) {
+    func addImage(image: UIImage) -> [String?]{
+        var newPhotos = photos
         let imageData = image.toBase64(format: .png)
-        photos.append(imageData)
-        print("images: \(photos.count)")
+        newPhotos.append(imageData)
+        print("images: \(newPhotos.count)")
+        return newPhotos
     }
     
     func addJournal(journal: String) {
@@ -83,14 +85,6 @@ extension UIImage {
         case .jpeg(let compression):
             imageData = self.jpegData(compressionQuality: compression)
         }
-        
         return imageData?.base64EncodedString()
-    }
-    
-    func cropUIImage(to geometry: GeometryProxy) -> UIImage {
-        let rect = CGRect(x: geometry.size.width + 5, y: 0, width: geometry.size.width, height: geometry.size.height)
-        let cgimage = self.cgImage!
-        cgimage.cropping(to: rect)
-        return UIImage(cgImage: cgimage)
     }
 }

@@ -10,11 +10,11 @@ import UIKit
 import MapKit
 
 struct MemoryView: View {
-    @EnvironmentObject var user: Person
-    @State private var showImageSourceChooser = false
-    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @State var user: Person
+
     var body: some View {
         VStack {
+            Text("Places you have visited").font(.headline)
             Button {
                 user.addPlace(place: Place(name: "Hanoi", coordinate: CLLocationCoordinate2D(latitude: 21.0278, longitude: 105.8342)))
             } label: {
@@ -23,29 +23,7 @@ struct MemoryView: View {
             List {
                 VStack {
                     ForEach(user.placesVisited) { place in
-                        VStack {
-                            Text(place.name)
-                            Image(systemName: "plus")
-                                .onTapGesture {
-                                    showImageSourceChooser = true
-                                }
-                            Divider()
-                            GeometryReader { geometry in
-                                ScrollView{
-                                    LazyVGrid(columns: gridItemLayout, spacing: 3) {
-                                        ForEach(place.photos, id: \.self) { photo in
-                                            Image(uiImage: UIImage(data: Data(base64Encoded: photo!)!)!)
-                                                .resizable()
-                                                .frame(width: geometry.size.width / 3, height: geometry.size.height / 3)
-                                        }
-                                    }
-                                }
-                            }
-                            .frame(height: 400)
-                        }
-                        .popover(isPresented: $showImageSourceChooser, content: {
-                            MemoryImageSourceChooser(showImageSourceChooser: $showImageSourceChooser, place: place)
-                        })
+                        PlaceView(place: $user.placesVisited[user.placesVisited.firstIndex(matching: place)!])
                     }
                 }
             }
@@ -57,51 +35,9 @@ struct MemoryView: View {
     }
 }
 
-struct MemoryImageSourceChooser: View {
-    @Binding var showImageSourceChooser: Bool
-    @State private var imageSourceType = UIImagePickerController.SourceType.photoLibrary
-    @State private var showImagePicker = false
-    @EnvironmentObject var user: Person
-    @State var place: Place
-    @State var showAlertForOverlappingImage = false
 
-    var body: some View {
-        Text("Add photo to \(place.name)").font(.headline)
-        Divider()
-        HStack {
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                Image(systemName: "camera").imageScale(.large)
-                    .onTapGesture {
-                        showImagePicker = true
-                        imageSourceType = .camera
-                    }
-                }
-            Image(systemName: "photo").imageScale(.large)
-                .onTapGesture {
-                    showImagePicker = true
-                    imageSourceType = .photoLibrary
-                }
-            }
-        .popover(isPresented: $showImagePicker, content: {
-            ImagePicker(sourceType: imageSourceType) {
-                image in
-                if place.photos.contains(image.toBase64(format: .png)) {
-                    showAlertForOverlappingImage = true
-                } else {
-                    user.placesVisited[user.placesVisited.firstIndex(matching: place)!].addImage(image: image)
-                }
-            }
-            .alert(isPresented: $showAlertForOverlappingImage) { () -> Alert in
-                .init(title: Text("Image is already in gallery"), message: Text("Image will not be dupilicated"), dismissButton: .cancel())
-            }
-        }
-    )
-
-    }
-}
-
-struct MemoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemoryView()
-    }
-}
+//struct MemoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MemoryView()
+//    }
+//}
