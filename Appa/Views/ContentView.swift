@@ -18,72 +18,35 @@ struct ContentView: View {
     @State private var showSearchView = false
     @State private var showMenu = false
     
-    var userLatitude: String {
-        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
-    }
-    
-    var userLongitude: String {
-        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
-    }
+    @State private var landmarks = [Landmark]()
+    @State private var searchString = ""
+    @State private var tapped = false
 
     var currentLocation: CLLocationCoordinate2D? {
         locationManager.lastLocation?.coordinate
     }
     
-    
     var body: some View {
-        if !showSearchView {
-            MapView(currentCoordinate: currentLocation, selection: $selection)
-                .edgesIgnoringSafeArea(.all)
-                .overlay( SearchBarAndMenuView(), alignment: .topLeading)
-        }
-        else {
-            searchView
-        }
+        MapView(landmarks: landmarks, currentCoordinate: currentLocation, selection: $selection)
+            .edgesIgnoringSafeArea(.all)
+            .overlay(
+                SearchBarAndMenuView(searchString: $searchString, action: getNearbyLandmarks),
+                alignment: .topLeading
+            )
     }
     
-    var searchView: some View {
-        VStack {
-            Form {
-                Section(header: Text("Location Search")) {
-                    ZStack(alignment: .trailing) {
-                        TextField("Search", text: $locationService.queryFragment)
-                        if locationService.status == .isSearching {
-                            Image(systemName: "clock")
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-                Section(header: Text("Results")) {
-                    List {
-                        Group {
-                            switch locationService.status {
-                            case .noResult: Text("No result")
-                            case .error(let errMsg): Text("Error: \(errMsg)")
-                            default: EmptyView()
-                            }
-                        }
-                        .foregroundColor(.gray)
-                        
-                        ForEach(locationService.searchResults, id: \.self) { completionResult in
-                            Text(completionResult.title)
-                        }
-                    }
-                }
+    private func getNearbyLandmarks() {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = searchString
+        request.region = MKCoordinateRegion(center: currentLocation!, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if let response = response {
+                let mapItems = response.mapItems
+                self.landmarks = mapItems.map { Landmark(placemark: $0.placemark) }
             }
         }
-    }
-    
-    
-    private var menuIcon: some View {
-        Image(systemName: "menubar.rectangle")
-            .imageScale(.large)
-            .onTapGesture {
-                showMenu = true
-            }
-            .sheet(isPresented: $showMenu, content: {
-                MenuView()
-            })
     }
 }
 

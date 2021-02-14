@@ -10,11 +10,13 @@ import SwiftUI
 struct SearchBarAndMenuView: View {
     @State private var showSearchView = false
     @State private var showMenu = false
+    @Binding var searchString: String
+    var action: () -> ()
     
     var body: some View {
         HStack {
             menuIcon.padding(.leading)
-            SearchView()
+            SearchView(text: $searchString, action: action)
             .onTapGesture {
                 showSearchView = true
             }
@@ -37,9 +39,9 @@ struct SearchBarAndMenuView: View {
         )
     }
 }
-
-struct SearchBarAndMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBarAndMenuView()
-    }
-}
+//
+//struct SearchBarAndMenuView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchBarAndMenuView()
+//    }
+//}

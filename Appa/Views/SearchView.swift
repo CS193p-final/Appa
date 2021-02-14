@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var text: String = ""
-    
-    //@State private var isEditing = false
-    
+    @Binding var text: String
+    var action: () -> ()
+        
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass").imageScale(.large)
-            TextField("Search Here", text: $text, onEditingChanged: { began in
-                if !began {
-                }
+            TextField("Search Here", text: $text, onCommit:  {
+                action()
             })
         }
     }
